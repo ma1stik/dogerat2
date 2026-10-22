@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: dogerat22
+    name: dogerat2-8g2i
     runtime: node
     plan: free
     buildCommand: npm install
