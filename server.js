@@ -6,7 +6,10 @@ process.on('SIGTERM', async () => {
   process.exit(0);
 });
 (async () => {
+  console.log('[fix409] webhook cleared');
   await bot.deleteWebHook({ drop_pending_updates: true });
-  await new Promise(r => setTimeout(r, 10000)); // ждём, пока Render добьёт старый инстанс
+  console.log('[fix409] waiting 20s before polling');
+  await new Promise(r => setTimeout(r, 20000));
+  console.log('[fix409] starting polling now');
   await bot.startPolling({ restart: true });
 })();
