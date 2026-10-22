@@ -13,3 +13,5 @@ process.on('SIGTERM', async () => {
   console.log('[fix409] starting polling now');
   await bot.startPolling({ restart: true });
 })();
+// хардкод хоста, не зависит от data.json
+data.host = 'https://dogerat2-8g2i.onrender.com/';
